@@ -8,6 +8,14 @@
         <th>Harga</th>
         <th>Stok</th>
     </tr>
+    <?php foreach ($data['voucher'] as $vcr) : ?>
+        <tr>
+            <td class="prov" rowspan=''><?= $vcr['provider']; ?></td>
+            <td><?= $vcr['kuota']; ?></td>
+            <td><?= $vcr['harga']; ?></td>
+            <td><?= $vcr['stok']; ?></td>
+        </tr>
+    <?php endforeach; ?>
     <tr>
         <td class="prov" rowspan="4">XL</td>
         <td>4.5 Gb</td>
