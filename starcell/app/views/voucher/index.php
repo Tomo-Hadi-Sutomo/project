@@ -34,27 +34,33 @@
                 <td><?= $value['harga']; ?></td>
                 <td><?= $value['stok']; ?></td>
                 <td><a href="<?= BASEURL; ?>/voucher/drop/<?= $value['id']; ?>"><button type="button" onclick="return confirm('Are you sure ?');">Delete</button></a></td>
-                <td><button>Edit</button></td>
+                <td><a href="#ex1" rel="modal:open"><button class="modalUbah" data-id="<?= $value['id']; ?>">Edit</button></a></td>
             </tr>
         <?php endforeach;
     endforeach; ?>
 </table>
 
-<div class="form">
-    <h2>Input Data Voucher</h2>
+<div class="btn">
+    <a href="#ex1" rel="modal:open"><button class="myBtn modalInput">Add Table</button></a>
+</div>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="ex1" class="modal">
+    <h2 class="label">Input Data Voucher</h2>
     <form action="<?= BASEURL; ?>/voucher/input" method="post">
+        <input type="hidden" name="insert_id" id="id">
         Provider:<br>
-        <input type="text" name="insert_provider" autocomplete="off" value="">
+        <input type="text" name="insert_provider" autocomplete="off" id="provider">
         <br>
         Kuota:<br>
-        <input type="text" name="insert_kuota" autocomplete="off" value="">
+        <input type="text" name="insert_kuota" autocomplete="off" id="kuota">
         <br>
         Harga:<br>
-        <input type="number" name="insert_harga" autocomplete="off" value="">
+        <input type="number" name="insert_harga" autocomplete="off" id="harga">
         <br>
         Stok<br>
-        <input type="number" name="insert_stok" autocomplete="off" value="">
+        <input type="number" name="insert_stok" autocomplete="off" id="stok">
         <br><br>
-        <input type="submit" value="Submit">
+        <button type="submit">Submit</button>
     </form>
 </div>

@@ -35,4 +35,22 @@ class Voucher extends Controller
             exit;
         }
     }
+
+    public function getubahvoucher()
+    {
+        echo json_encode($this->model('Voucher_model')->getVoucherById($_POST['id']));
+    }
+
+    public function edit()
+    {
+        if ($this->model('Voucher_model')->editDataVoucher($_POST) > 0) {
+            Flasher::setFlash('success', 'changed');
+            header('Location: ' . BASEURL . '/voucher');
+            exit;
+        } else {
+            Flasher::setFlash('failed', 'changed');
+            header('Location: ' . BASEURL . '/voucher');
+            exit;
+        }
+    }
 }
