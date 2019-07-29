@@ -31,10 +31,10 @@ class Voucher_model
                     VALUES
                     (:provider, :kuota, :harga, :stok)";
         $this->db->query($query);
-        $this->db->bind('provider', $data['insert_provider']);
-        $this->db->bind('kuota', $data['insert_kuota']);
-        $this->db->bind('harga', $data['insert_harga']);
-        $this->db->bind('stok', $data['insert_stok']);
+        $this->db->bind('provider', (string) $data['insert_provider']);
+        $this->db->bind('kuota', (string) $data['insert_kuota']);
+        $this->db->bind('harga', (int) $data['insert_harga']);
+        $this->db->bind('stok', (int) $data['insert_stok']);
 
         $this->db->execute();
 
