@@ -27,8 +27,9 @@ class Voucher_model
     public function inputDataVoucher($data)
     {
         $query = "INSERT INTO voucher
+                    (provider, kuota, harga, stok)
                     VALUES
-                    ('', :provider, :kuota, :harga, :stok)";
+                    (:provider, :kuota, :harga, :stok)";
         $this->db->query($query);
         $this->db->bind('provider', $data['insert_provider']);
         $this->db->bind('kuota', $data['insert_kuota']);
