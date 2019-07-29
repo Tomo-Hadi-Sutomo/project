@@ -10,7 +10,7 @@ class Flasher
         ];
     }
 
-    public function flash()
+    public static function flash()
     {
         if (isset($_SESSION['flash'])) {
             echo '<script type= "text/javascript">alert("Message: ' . $_SESSION['flash']['message'] . '\nAction: ' . $_SESSION['flash']['action'] . '")</script>';
